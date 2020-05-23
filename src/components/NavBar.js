@@ -1,5 +1,8 @@
 import React from 'react';
+// REACT ROUTER
+import { NavLink } from 'react-router-dom';
 // MATERIAL-UI
+import Link from '@material-ui/core/Link'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -8,10 +11,9 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { NavLink } from 'react-router-dom';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
-
-function HideOnScroll(props) {
+const HideOnScroll = (props) => {
   const { children, window } = props;
   const trigger = useScrollTrigger({ target: window ? window() : undefined });
   return (
@@ -51,6 +53,11 @@ const NavBar = () => {
                 {"< Cole Davis >"}
               </NavLink>
             </Typography>
+            <IconButton>
+              <Link href="https://github.com/Colebuildanddevelop">
+                <GitHubIcon style={{color: 'white'}} />
+              </Link>
+            </IconButton>
           </Toolbar>         
         </AppBar>
       </HideOnScroll>
